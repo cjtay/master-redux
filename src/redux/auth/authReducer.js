@@ -7,9 +7,9 @@ import {
 
 const initialStates = {
     loading: false,
-    authenticated: true,
+    authenticated: false,
     userProfile: [],
-    errorMsg: '',
+    errorMsg: 'test message',
 };
 
 const authReducer = (state = initialStates, action) => {

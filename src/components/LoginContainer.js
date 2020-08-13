@@ -2,29 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login, logout } from '../redux';
 
-const LoginContainer = ({
-    loading,
-    authenticated,
-    userProfile,
-    errorMsg,
-    login,
-    logout,
-}) => {
+const LoginContainer = (props) => {
     return (
         <div>
             <h3>Login Status:</h3>
-            {authenticated ? <p>auth TRUE</p> : <p>auth FALSE</p>}
-            {/* {authenticated ? (
+
+            {props.auth.authenticated ? (
                 <>
                     <p>User is logged in</p>
-                    <button onClick={logout}>Logout</button>
+                    <button onClick={props.logout}>Logout</button>
                 </>
             ) : (
                 <>
                     <p>User is logged out</p>
-                    <button onClick={login}>Login</button>
+                    <button onClick={props.login}>Login</button>
                 </>
-            )} */}
+            )}
         </div>
     );
 };
